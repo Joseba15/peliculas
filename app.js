@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express()
 // require('./db')
+const peliculas= require('./routes/peliculas')
 const cervezas = require('./routes/cervezas')
 const users = require('./routes/users')
 const auth = require('./routes/auth')
@@ -20,6 +21,6 @@ app.use(express.json())
 app.use('/cervezas', cervezas)
 app.use('/users', users)
 app.use('/auth', auth)
-
+app.use('/peliculas',peliculas)
 
 app.listen(process.env.PORT)
